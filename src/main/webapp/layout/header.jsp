@@ -29,6 +29,29 @@
 <script type="text/javascript" src="jsbootstrap/bootstrap-scrollspy.js" /></script>
 <script type="text/javascript" src="jsbootstrap/bootstrap-modal.js" /></script>
 
+<script type="text/javascript">
+
+function logout(){
+	
+	//alert("i am inside logut");
+
+	$.ajax({
+		url : "rest/file/logout",
+	    type: "GET",
+	    datatype : "text",
+	   
+	    success:function(data, textStatus, jqXHR){
+	    	alert('successfully logout');
+	    	window.location.href="HomePage.html";
+	    },
+	    error: function(jqXHR, textStatus, errorThrown){
+	    	alert('Could not process request.. ' + errorThrown);
+	    }
+	});
+	
+}
+
+</script>
 
 
 
@@ -51,6 +74,7 @@
 			<% } %>
 			<% if(session.getAttribute("username") == null) { %>
 			<ul id="loginMenu" class="nav" style=" float:right;">
+				<li><a href="contact.jsp"style="color: white;">Contact Us</a></li>
 				<li><a href="login.jsp" style="color: white;">Login</a></li>
 				<li><a href="signup.jsp" style="color: white;">Sign Up</a></li>
 				<li><a href="#"> <img src="img/shopping.jpg" alt="" height="22" width="24"></a></li>
@@ -68,8 +92,10 @@
 	 					<c:otherwise>--%>
 	 					
 	 					<ul  class="nav" style=" float:right;">
-	 					<li>	<a class="dropdown-toggle" data-toggle="dropdown" href="#loggedInDown" style="color: white;float:right; margin-top:11px" onclick="window.location.href='profile.jsp'">Hello ${usersfirstname} ! </a></li>
-	 					<li>	<a href="#"> <img src="img/shopping.jpg" alt="" height="35" width="35"></a></li>
+	 					<li><a href="contact.jsp"style="color: white;">Contact Us</a></li>
+	 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#loggedInDown" style="color: white;float:right; margin-top:11px" onclick="window.location.href='profile.jsp'">Hello ${usersfirstname} ! </a></li>
+	 					<li><a onclick="logout()">Logout</a>
+	 					<li><a href="cart.jsp"> <img src="img/shopping.jpg" alt="" height="35" width="35"></a></li>
 	 					</ul>
 	 			
 	 				<%--	</c:otherwise>

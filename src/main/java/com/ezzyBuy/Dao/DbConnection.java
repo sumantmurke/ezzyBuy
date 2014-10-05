@@ -13,8 +13,8 @@ import com.ezzyBuy.Domain.User;
 public class DbConnection {
 
 	private static String connectionString = "jdbc:mysql://ezzybuy.cnnmp1jopl3g.us-west-1.rds.amazonaws.com:3306/ezzyBuy";
-	private static String dbUsername = "";
-	private static String dbPassword = "";
+	private static String dbUsername = "root";
+	private static String dbPassword = "password";
 
 	public void insertUser(User user){
 	    final String query= "INSERT into user_details(first_name, last_name, username, password, credit_card)values(?,?,?,?,?) ";

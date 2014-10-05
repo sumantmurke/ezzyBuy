@@ -29,8 +29,17 @@
 <script type="text/javascript" src="jsbootstrap/bootstrap-scrollspy.js" /></script>
 <script type="text/javascript" src="jsbootstrap/bootstrap-modal.js" /></script>
 
+<!-- trial version -->
+
+<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Mobilestore iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
 
 
+<!-- trial version end -->
 <body>
 <%@include file="layout/header.jsp"%>
 
@@ -66,8 +75,8 @@
           <img src="img/samsung-galaxy-s4.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h2 style="color: white;">Samsung galaxy S4</h2>
-              <p class="lead">The next big thing is here</p>
+              <h1 style="color: white;">Samsung galaxy S4</h1>
+              <p >The next big thing is here</p>
               <br>
               <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
             </div>
@@ -126,6 +135,149 @@
     <!-- thumnails finish -->      
 <hr class="featurette-divider">
 
+<!-- trial version -->
+
+  <div class="content-grids">
+		    	<h4>Deals of the day</h4>
+		    	<div class="section group">
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m1.jpg">
+					 <a href="single.html">Ascend G730</a>
+					 <h3>$260</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m2.jpg">
+					  <a href="single.html">Iphone 4s</a>
+					 <h3>$150</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m7.jpg">
+					  <a href="single.html">HTC one</a>
+					 <h3>$130</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m4.jpg">
+					  <a href="single.html">BlackBerry Torch 9800</a>
+					 <h3>$460</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+			</div>
+			<div class="section group">
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m2.jpg">
+					 <a href="single.html">IPhone 4</a>
+					 <h3>$260</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m6.jpg">
+					  <a href="single.html">Samsung</a>
+					 <h3>$100</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m7.jpg">
+					  <a href="single.html">HTC</a>
+					 <h3>$180</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img src="images/m1.jpg">
+					  <a href="single.html">Ascend</a>
+					 <h3>$140</h3>
+					 <ul>
+					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="i" href="single.html"> </a></li>
+					 	<li><a  class="Compar" href="single.html"> </a></li>
+					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 </ul>
+				</div>
+			</div>
+		    
+		    	</div>
+		    	<div class="content-sidebar">
+		    		<h4>Categories</h4>
+						<ul>
+							<li><a href="#">Accord Mobiles</a></li>
+							<li><a href="#">Ace Mobile</a></li>
+							<li><a href="#">Acer Mobile</a></li>
+							<li><a href="#">Airfone</a></li>
+							<li><a href="#">Apple</a></li>
+							<li><a href="#">Blackberry</a></li>
+							<li><a href="#">Byond Tech</a></li>
+							<li><a href="#">Celkon Mobiles</a></li>
+							<li><a href="#">Dell Mobile Phones </a></li>
+							<li><a href="#">Fly Mobile</a></li>
+							<li><a href="#">Fujezone Mobiles </a></li>
+							<li><a href="#">HTC</a></li>
+							<li><a href="#">LG Mobiles</a></li>
+							<li><a href="#">Longtel Mobile</a></li>
+							<li><a href="#">Maxx</a></li>
+							<li><a href="#">Micromax Mobiles </a></li>
+							<li><a href="#">Samsung Mobiles</a></li>
+							<li><a href="#">Sony Ericsson Mobiles</a></li>
+							<li><a href="#">Wynncom Mobiles</a></li>
+						</ul>
+		    	</div>
+		    </div>
+		    <div class="clear"> </div>
+		    </div>
+		    
+		    
+<hr class="featurette-divider">
+
+
+<%@include file="layout/footer.jsp"%>
+
+
+
+
+
+
+
+
+
+
+
+<!-- trial version finish -->
  <script>
       !function ($) {
         $(function(){
