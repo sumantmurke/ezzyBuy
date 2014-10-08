@@ -29,6 +29,33 @@
 
 <script type="text/javascript">
 
+function adminLogin(){
+	// alert('inside Login page');
+	   var email = $('#adminemail').val();
+	   var password = $('#adminpassword').val();
+	 
+	// alert('Username : '+email);
+	   
+		$.ajax({
+			url : "mob/file/adminlogin",
+		    type: "POST",
+		    data : "email=" + email + "&password=" + password,
+		    	success:function(data, textStatus, jqXHR){
+			    	window.location.href="index.jsp";
+			    	    
+			    },
+		    error: function(jqXHR, textStatus, errorThrown){
+		    	alert('Could not process request.. ' + errorThrown);
+		    	window.location.href="login.jsp";
+		    }
+		});
+}
+
+
+
+
+
+
 
 
 
@@ -45,16 +72,7 @@ function userLogin(){
 		    type: "POST",
 		    data : "email=" + email + "&password=" + password,
 		    	success:function(data, textStatus, jqXHR){
-			    	var uri = "rest/file/refresh";
-			    	$.ajax({
-			    		url : uri,
-			    	    type: "GET",
-			    	    datatype : "json",	     
-			    	    success:function(data, textStatus, jqXHR){
-			    		window.location.href="userPage.jsp";
-			    	    }
-			    	});
-			    	    
+			    	window.location.href="index.jsp";    
 			    },
 		    error: function(jqXHR, textStatus, errorThrown){
 		    	alert('Could not process request.. ' + errorThrown);
@@ -103,7 +121,7 @@ function EmailVerify() {
 				<div class="span5" style="margin-right: -30px;">
 					<div
 						style="background-color: ghostwhite; -webkit-box-shadow: 3px 0px 5px #888888; -moz-box-shadow: 3px 0px 5px #888888; box-shadow: 3px 0px 5px #888888; padding: 30px;">
-						<h3>Sign In</h3>
+						<h3>Sign In as User</h3>
 						<table>
 							<tr>
 								<td><label for="inputEmail3" class="col-sm-2 control-label">Email</label></td>
@@ -134,24 +152,38 @@ function EmailVerify() {
 				</div>
 				<div class="divider-vertical"></div>
 
-				<div class="span5" style="height:240px">
+				<div class="span5" style="margin-right: -30px;">
 					<div
-						style="background-color: ghostwhite; height:180px; -webkit-box-shadow: 3px 0px 5px #888888; -moz-box-shadow: 3px 0px 5px #888888; box-shadow: 3px 0px 5px #888888; padding: 30px;">
-						<h4>Don't have an account!</h4>
-						<button class="btn btn-large btn-success" type="button" onclick="window.location.href='signup.jsp'">Sign up</button>
-						<h4>for enjoying free and secured 1GB of storage</h4>
-						
-						
-						<!--  <a href="signup.jsp"> Sign Up Here </a> -->
+						style="background-color: ghostwhite; -webkit-box-shadow: 3px 0px 5px #888888; -moz-box-shadow: 3px 0px 5px #888888; box-shadow: 3px 0px 5px #888888; padding: 30px;">
+						<h3>Sign In as Admin</h3>
+						<table>
+							<tr>
+								<td><label for="inputEmail3" class="col-sm-2 control-label">Email</label></td>
+								<td><div class="col-sm-10">
+										<input type="email" class="form-control" id="adminemail"
+											placeholder="Your registered email"  onChange="EmailVerify();">
+									</div></td>
+							</tr>
+							<tr>
+								<td><label for="inputPassword3" class="col-sm-2 control-label">Password</label></td>
+								<td><div class="col-sm-10"> <input type="password" class="form-control" id="adminpassword"
+											placeholder="Password"">
+									</div></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><div class="col-sm-offset-2 col-sm-10">
+										<button type="submit" class="btn btn-primary" style= "margin-left:45px" id="login"  onclick="adminLogin()">Login</button>
+									</div></td>
+							</tr>
+						</table>
 					</div>
-				</div>
-			</div>
+				</div>			</div>
 		</div>
 
 	
 	</div>
-
-<div id="cnt" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div id="cnt" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Modal header</h3>
@@ -166,6 +198,7 @@ function EmailVerify() {
 </div>
 
 
+ -->
 
 </body>
 </html>

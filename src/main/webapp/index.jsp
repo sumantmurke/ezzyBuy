@@ -142,21 +142,21 @@
 		    	<div class="section group">
 				<div class="grid_1_of_4 images_1_of_4 products-info">
 					 <img src="images/m1.jpg">
-					 <a href="single.html">Ascend G730</a>
+					 <a href="view.jsp">Ascend G730</a>
 					 <h3>$260</h3>
 					 <ul>
-					 	<li><a  class="cart" href="single.html"> </a></li>
-					 	<li><a  class="i" href="single.html"> </a></li>
-					 	<li><a  class="Compar" href="single.html"> </a></li>
-					 	<li><a  class="Wishlist" href="single.html"> </a></li>
+					 	<li><a  class="cart" href="view.jsp"> </a></li>
+					 	<li><a  class="i" href="view.jsp"> </a></li>
+					 	<li><a  class="Compar" href="view.jsp"> </a></li>
+					 	<li><a  class="Wishlist" href="view.jsp"> </a></li>
 					 </ul>
 				</div>
 				<div class="grid_1_of_4 images_1_of_4 products-info">
 					 <img src="images/m2.jpg">
-					  <a href="single.html">Iphone 4s</a>
+					  <a href="view.jsp">Iphone 4s</a>
 					 <h3>$150</h3>
 					 <ul>
-					 	<li><a  class="cart" href="single.html"> </a></li>
+					 	<li><a  class="cart" href="view.jsp"> </a></li>
 					 	<li><a  class="i" href="single.html"> </a></li>
 					 	<li><a  class="Compar" href="single.html"> </a></li>
 					 	<li><a  class="Wishlist" href="single.html"> </a></li>

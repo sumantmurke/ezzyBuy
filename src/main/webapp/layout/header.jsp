@@ -31,18 +31,20 @@
 
 <script type="text/javascript">
 
+
+
 function logout(){
 	
-	//alert("i am inside logut");
+	alert("i am inside logut");
 
 	$.ajax({
-		url : "rest/file/logout",
-	    type: "GET",
+		url : "mob/file/logout",
+	    type: "POST",
 	    datatype : "text",
 	   
-	    success:function(data, textStatus, jqXHR){
+	    success:function( ){
 	    	alert('successfully logout');
-	    	window.location.href="HomePage.html";
+	    	window.location.href="login.jsp";
 	    },
 	    error: function(jqXHR, textStatus, errorThrown){
 	    	alert('Could not process request.. ' + errorThrown);
@@ -50,6 +52,11 @@ function logout(){
 	});
 	
 }
+
+
+
+ 
+
 
 </script>
 
@@ -92,9 +99,9 @@ function logout(){
 	 					<c:otherwise>--%>
 	 					
 	 					<ul  class="nav" style=" float:right;">
-	 					<li><a href="contact.jsp"style="color: white;">Contact Us</a></li>
+	 					<li><a href="contact.jsp"style="color: white; margin-top:11px">Contact Us</a></li>
 	 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#loggedInDown" style="color: white;float:right; margin-top:11px" onclick="window.location.href='profile.jsp'">Hello ${usersfirstname} ! </a></li>
-	 					<li><a onclick="logout()">Logout</a>
+	 					<li><a href="#" id ="logout" style="color: white; margin-top:11px;" onclick="logout()" >Logout</a>
 	 					<li><a href="cart.jsp"> <img src="img/shopping.jpg" alt="" height="35" width="35"></a></li>
 	 					</ul>
 	 			
@@ -102,6 +109,7 @@ function logout(){
  					</c:choose>
 					--%>
 					<!-- 
+					
 					<ul class="dropdown-menu">
 				      <li><a href="/project-vars/showProfile.htm">Profile</a></li>
 				      <li><a href="/project-vars/logout.htm">Logout</a></li>

@@ -1,5 +1,6 @@
 package com.ezzyBuy.controller;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.FormParam;
@@ -9,13 +10,81 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
+import org.apache.http.client.protocol.ResponseAuthCache;
+import org.apache.http.protocol.ResponseContent;
+
 import com.amazonaws.services.s3.model.Bucket;
 import com.ezzyBuy.Dao.DbConnection;
 import com.ezzyBuy.Domain.User;
 import com.ezzyBuy.Domain.contactDetails;
+import com.sun.jersey.api.Responses;
+import com.sun.jersey.core.spi.factory.ResponseBuilderHeaders;
 
 @Path("/file")
 public class RestfullService {
+	
+	
+	
+	@POST
+	@Path("/adminlogin")
+	public Response adminLogin(@FormParam("email") String email, 
+			@FormParam("password") String password, 
+			@Context HttpServletRequest req) {
+	
+		System.out.println("admin details are "+email +" and passowrd is "+password);
+		
+		
+		String adminUsername ="sumantmurke@gmail.com";
+		String adminPassword ="asd";
+		
+		if(adminUsername == email && adminPassword == password){
+			String output="Admin is successfully logged";
+			return Response.status(200).entity(output).build();
+		}
+		
+		
+		System.out.println("User Invalid");
+		String invalidadmin="admin invlaid";
+		return Response.status(400).entity(invalidadmin).build();
+	}
+	
+	
+	
+	
+	@POST
+	@Path("/login")
+	public Response userLogin(@FormParam("email") String email, 
+			@FormParam("password") String password, 
+			@Context HttpServletRequest req) {
+		
+		String invalidUser = "Invalid User";
+		System.out.println("Username is: "+email);
+		DbConnection dbcon = new DbConnection();
+		
+		if(dbcon.loginCheck(email, password))
+		{
+		String output = "Login Successful for "+ email;
+		System.out.println("User Validated");
+		HttpSession session= req.getSession(true);
+		session.setAttribute("username", email);
+		session.setAttribute("sessionId", session.getId());
+
+		
+		User user =	dbcon.getUserDetails(email);
+		user.getFirstName();
+		System.out.println("users firsname"+user.getFirstName());
+		
+		session.setAttribute("usersfirstname", user.getFirstName());
+		session.setAttribute("userslastname", user.getLastName());
+		
+		return Response.status(200).entity(output).build();
+		}
+		else{
+			System.out.println("User Invalid");
+			return Response.status(400).entity(invalidUser).build();	
+		}
+		
+	}
 	
 	
 	@POST
@@ -88,10 +157,21 @@ public class RestfullService {
 	}
 
 	
-	@GET
+	@POST
 	@Path("/logout")
 	public Response logout(@Context HttpServletRequest req) {
+		
+		System.out.println("inside logout function ");
 		HttpSession session= req.getSession(false);
+		
+		System.out.println("inside logout before httpservlet logout");
+		try {
+			req.logout();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("before session invalidate ");
 		session.invalidate();
 		System.out.println("User has logged out !");
 		String output = "User has succesfully logged out";
