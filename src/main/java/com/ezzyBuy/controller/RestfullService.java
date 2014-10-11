@@ -37,7 +37,7 @@ public class RestfullService {
 		String adminUsername ="sumantmurke@gmail.com";
 		String adminPassword ="asd";
 		
-		if(adminUsername == email && adminPassword == password){
+		if(adminUsername.equalsIgnoreCase(email) && adminPassword.equalsIgnoreCase(password)){
 			String output="Admin is successfully logged";
 			return Response.status(200).entity(output).build();
 		}

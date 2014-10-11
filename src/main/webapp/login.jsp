@@ -41,7 +41,7 @@ function adminLogin(){
 		    type: "POST",
 		    data : "email=" + email + "&password=" + password,
 		    	success:function(data, textStatus, jqXHR){
-			    	window.location.href="index.jsp";
+			    	window.location.href="addCatlog.jsp";
 			    	    
 			    },
 		    error: function(jqXHR, textStatus, errorThrown){
