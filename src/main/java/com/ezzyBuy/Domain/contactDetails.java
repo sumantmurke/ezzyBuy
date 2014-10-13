@@ -4,7 +4,7 @@ public class contactDetails {
 
 	private String contactName;
 	private String contactPersonEmail;
-	private String contactPersonMob;
+	private int contactPersonMob;
 	private String contactSubj;
 	
 	
@@ -21,10 +21,10 @@ public class contactDetails {
 	public void setContactPersonEmail(String contactPersonEmail) {
 		this.contactPersonEmail = contactPersonEmail;
 	}
-	public String getContactPersonMob() {
+	public int getContactPersonMob() {
 		return contactPersonMob;
 	}
-	public void setContactPersonMob(String contactPersonMob) {
+	public void setContactPersonMob(int contactPersonMob) {
 		this.contactPersonMob = contactPersonMob;
 	}
 	public String getContactSubj() {

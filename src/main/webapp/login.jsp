@@ -45,7 +45,8 @@ function adminLogin(){
 			    	    
 			    },
 		    error: function(jqXHR, textStatus, errorThrown){
-		    	alert('Could not process request.. ' + errorThrown);
+		    	//alert('Could not process request.. ' + errorThrown);
+		    	alert('Thankyou please check your email that you have provided. We will contact you soon')
 		    	window.location.href="login.jsp";
 		    }
 		});
@@ -72,7 +73,7 @@ function userLogin(){
 		    type: "POST",
 		    data : "email=" + email + "&password=" + password,
 		    	success:function(data, textStatus, jqXHR){
-			    	window.location.href="index.jsp";    
+			    	window.location.href="product.jsp";    
 			    },
 		    error: function(jqXHR, textStatus, errorThrown){
 		    	alert('Could not process request.. ' + errorThrown);

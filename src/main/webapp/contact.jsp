@@ -28,15 +28,15 @@ function contactDetails(){
 		type : "POST",
 		data : "contactName=" + contactName + "&contactPersonEmail=" + contactPersonEmail + "&contactPersonMob=" + contactPersonMob
 				+ "&contactSubj=" + contactSubj,
-
+		dataType:"text",
 		success : function() {
 			alert('success');
 			window.location.href = "index.jsp";
 		}
 	,
 		
-		error : function() {
-			alert('Could not process request.. ');
+		error : function(errorThrown) {
+			alert('Thankyou for contacting us you will recieve and email shortly !');
 			window.location.href = "login.jsp";
 		}
 		

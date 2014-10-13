@@ -100,7 +100,7 @@ function logout(){
 	 					
 	 					<ul  class="nav" style=" float:right;">
 	 					<li><a href="contact.jsp"style="color: white; margin-top:11px">Contact Us</a></li>
-	 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#loggedInDown" style="color: white;float:right; margin-top:11px" onclick="window.location.href='profile.jsp'">Hello ${usersfirstname} ! </a></li>
+	 					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#loggedInDown" style="color: white;float:right; margin-top:11px" onclick="window.location.href='product.jsp'">Hello ${usersfirstname} ! </a></li>
 	 					<li><a href="#" id ="logout" style="color: white; margin-top:11px;" onclick="logout()" >Logout</a>
 	 					<li><a href="cart.jsp"> <img src="img/shopping.jpg" alt="" height="35" width="35"></a></li>
 	 					</ul>

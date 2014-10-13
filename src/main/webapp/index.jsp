@@ -133,9 +133,19 @@
           
           
     <!-- thumnails finish -->      
-<hr class="featurette-divider">
+
+
+
+
+
+
+
+
+
+
 
 <!-- trial version -->
+<hr class="featurette-divider">
 
   <div class="content-grids">
 		    	<h4>Deals of the day</h4>

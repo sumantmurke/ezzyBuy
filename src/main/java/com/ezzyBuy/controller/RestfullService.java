@@ -1,5 +1,8 @@
 package com.ezzyBuy.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,7 +19,10 @@ import org.apache.http.protocol.ResponseContent;
 import com.amazonaws.services.s3.model.Bucket;
 import com.ezzyBuy.Dao.DbConnection;
 import com.ezzyBuy.Domain.User;
+import com.ezzyBuy.Domain.catlog;
 import com.ezzyBuy.Domain.contactDetails;
+import com.ezzyBuy.Facade.AmazonSES;
+import com.google.gson.Gson;
 import com.sun.jersey.api.Responses;
 import com.sun.jersey.core.spi.factory.ResponseBuilderHeaders;
 
@@ -140,7 +146,7 @@ public class RestfullService {
 	@Path("/contact")
 	public Response contactUser(@FormParam("contactName") String contactName,
 			@FormParam("contactPersonEmail") String contactPersonEmail,
-			@FormParam("contactPersonMob") String contactPersonMob, 
+			@FormParam("contactPersonMob") int contactPersonMob, 
 			@FormParam("contactSubj") String contactSubj ){
 		
 			contactDetails cd = new contactDetails();
@@ -150,6 +156,8 @@ public class RestfullService {
 			cd.setContactSubj(contactSubj);
 			
 			System.out.println("contact persons email address is: "+cd.getContactPersonEmail());
+			
+			AmazonSES.sendEmail(cd.getContactPersonEmail(), cd.getContactName(), cd.getContactPersonMob());
 			
 			String output = "Thankyou for registring with us you will recieve email shortly "+ cd.getContactSubj();
 			
@@ -178,6 +186,37 @@ public class RestfullService {
 		
 		 return Response.status(200).entity(output).build();
 		
+	}
+	
+	
+	@POST
+	@Path("/addtocart")
+	public Response addtocart(@FormParam("companyname") String companyname){
+		
+		
+		System.out.println("name of company "+companyname);
+		DbConnection.addtocart(companyname);
+		System.out.println("DB addcart added sucessfully.");
+		
+		
+		
+		return null;
+	}
+	
+	
+	@GET
+	@Path("/cart")
+	public String productCatlog() {
+		List<catlog> allitems=new ArrayList<catlog>();
+		allitems = DbConnection.getCart();
+
+		Gson gson = new Gson();
+		String catlogJson= gson.toJson(allitems);
+		System.out.println("string of json is "+catlogJson);
+		
+
+		
+		return catlogJson;
 	}
 	
 }

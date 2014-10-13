@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Cart</title>
+<title>Add Catlog</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
 <script>
 function addCatlog(){
@@ -16,7 +22,7 @@ function addCatlog(){
 
 	$.ajax({
 	
-		url : "mob/file/cart",
+		url : "mob/catlog/productCatlog",
 		type : "GET",
 	
 		dataType:"text", 
@@ -57,42 +63,60 @@ function myFunction(){
 	alert("inside my function");
 	alert($('#as').html());
 	var companyname = $('#as').html();
-	//alert("the company name is "+companyname);
-	 if (confirm("Do you want to checkout the item ?") == true) {
+	alert("the company name is "+companyname);
+	 if (confirm("Do you want to add this product to cart ?") == true) {
 	       
-		 alert("successfully checked out!");
+		 alert(companyname);
 		 
-		window.location.href="index.jsp";
+		 $.ajax({
+				
+				url : "mob/file/addtocart",
+				type : "POST",
+				data : "companyname=" + companyname ,
+
+				success : function(data, textStatus, jqXHR) {
+					alert('success');
+					window.location.href = "cart.jsp";
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					alert('Could not process request.. ' + errorThrown);
+					window.location.href = "login.jsp";
+				}
+			});
 		 
-		 	    } else {
-	        window.location.href="cart.jsp";
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 //ajax complete
+		 
+		 
+		 
+	    } else {
+	        alert("choose another product");
 	    }
 	 alert(x);
 	 
 	}
 
-
-
-
-
-
 </script>
-
-
-
-
 
 </head>
 <body onload="addCatlog();">
 <%@include file="layout/header.jsp"%>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 		<table id="example" class="table table-hover">
 					<thead>
 						<tr>
@@ -106,6 +130,7 @@ function myFunction(){
 					
 					 
 				</table>
+
 
 
 
